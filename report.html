@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Paint Defect Analysis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+  
+  </style>
+</head>
+
+<body>
+    <div id = "result"></div>
+    <div id = "result1"></div>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      
+        </button>
+        <a class="navbar-brand" href="main.html">Paint Defect Analyzer</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid text-center">
+  
+    <div class="row content">
+
+      <div class="col-sm-8 text-left">
+        <h3>Generated Report Data</h3>
+          
+        <table style ="border-collapse: collapse;">
+            <thead>
+                <tr style="border-bottom:1px solid black">
+                    <th style="padding:10px;"><h5>Date</h5></th>
+                    <th style="padding:10px;"><h5>Plant</h5></th>
+                    <th style="padding:10px;"><h5>Car Model</h5></th>
+                    <th style="padding:10px;"><h5>Location</h5></th>
+                    <th style="padding:10px;"><h5>Type</h5></th>
+                    <th style="padding:10px;"><h5>Severity</h5></th>
+                    <th style="padding:10px;"><h5>Other</h5></th>
+                </tr>
+            </thead>
+          <tbody>
+            <tr>
+                <td style="padding:10px;">
+                    <div id = "date0"></div>
+                </td>
+                <td style="padding:10px;">
+                    <div id = "plant0"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "carModel0"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "location0"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "type0"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "severity0"></div>
+                </td>
+                <td style="padding:10px;">
+                  <div id = "other0"></div>
+              </td>
+            </tr>
+
+            <tr>
+                <td style="padding:10px;">
+                    <div id = "date1"></div>
+                </td>
+                <td style="padding:10px;">
+                    <div id = "plant1"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "carModel1"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "location1"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "type1"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "severity1"></div>
+                </td>
+                <td style="padding:10px;">
+                    <div id = "other1"></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding:10px;">
+                    <div id = "date2"></div>
+                </td>
+                <td style="padding:10px;">
+                    <div id = "plant2"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "carModel2"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "location2"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "type2"></div>
+                </td>
+
+                <td style="padding:10px;">
+                    <div id = "severity2"></div>
+                </td>
+                <td style="padding:10px;">
+                  <div id = "other2"></div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:10px;">
+                  <div id = "date3"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant3"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel3"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location3"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type3"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity3"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other3"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date4"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant4"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel4"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location4"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type4"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity4"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other4"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date5"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant5"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel5"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location5"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type5"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity5"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other5"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date6"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant6"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel6"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location6"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type6"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity6"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other6"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date7"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant7"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel7"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location7"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type7"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity7"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other7"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date8"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant8"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel8"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location8"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type8"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity8"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other8"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date9"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant9"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel9"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location9"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type9"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity9"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other9"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date10"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant10"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel10"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location10"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type10"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity10"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other10"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date11"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant11"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel11"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location11"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type11"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity11"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other11"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date12"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant12"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carMode12"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location12"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type12"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity12"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other12"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date13"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant13"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel13"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location13"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type13"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity13"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other13"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date14"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant14"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel14"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location14"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type14"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity14"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other14"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date15"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant15"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel15"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location15"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type15"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity15"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other15"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date16"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant16"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel16"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location16"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type16"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity16"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other16"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date17"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant17"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel17"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location17"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type17"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity17"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other17"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date18"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant18"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel18"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location18"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type18"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity18"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other18"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date19"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant19"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel19"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location19"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type19"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity19"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other19"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date20"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant20"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel20"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location20"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type20"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity20"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other20"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date21"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant21"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel21"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location21"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type21"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity21"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other21"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date22"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant22"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel22"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location22"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type22"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity22"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other22"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date23"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant23"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel23"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location23"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type23"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity23"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other23"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date24"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant24"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel24"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location24"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type24"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity24"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other24"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date25"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant25"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel25"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location25"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type25"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity25"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other25"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date26"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant26"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel26"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location26"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type26"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity26"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other26"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date27"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant27"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel27"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location27"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type27"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity27"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other27"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date28"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant28"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel28"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location28"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type28"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity28"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other28"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date29"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant29"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel29"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location29"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type29"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity29"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other29"></div>
+              </td>
+          </tr>
+          <tr>
+              <td style="padding:10px;">
+                  <div id = "date30"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "plant30"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "carModel30"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "location30"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "type30"></div>
+              </td>
+
+              <td style="padding:10px;">
+                  <div id = "severity30"></div>
+              </td>
+              <td style="padding:10px;">
+                  <div id = "other30"></div>
+              </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <input type="button" value="Generate Summary" id="summary" onclick="summary()" />
+
+  <footer class="container-fluid text-center">
+    <p>Team 5</p>
+  </footer>
+ 
+
+
+
+  <script>
+
+function summary(){
+    window.location.href = "summaryReport.html";
+}
+  
+  for (i = 0; i<localStorage.getItem("counter"); i++){
+    var one = JSON.parse(localStorage.getItem(i));
+    document.getElementById("date"+i.toString()).innerHTML=sessionStorage.getItem("date");
+    document.getElementById("plant"+i.toString()).innerHTML=one[4]
+    document.getElementById("carModel"+i.toString()).innerHTML=one[5]
+    document.getElementById("location"+i.toString()).innerHTML=one[0];
+    document.getElementById("type"+i.toString()).innerHTML=one[1];
+    document.getElementById("severity"+i.toString()).innerHTML=one[2];
+    document.getElementById("other"+i.toString()).innerHTML=one[3];
+
+  }
+  
+  
+
+  </script>
+
+</body>
+
+</html>

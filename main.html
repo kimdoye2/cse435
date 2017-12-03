@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Paint Defect Analysis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+  
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="main.html">Paint Defect Analyzer</a>
+      </div>
+      <div class="">
+          
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="report.html"><span class="glyphicon glyphicon-log-in"></span> Generate Report</a></li>
+        </ul>
+      </div> 
+    </div>
+  </nav>
+
+  <div class="container-fluid text-center">
+    <div class="row content">
+
+      <div class="col-sm-8 text-left">
+        <h1>Defect Data Input</h1>
+        
+        <div id="Date">
+          <div> 
+            <strong>Date</strong>
+
+          </div>
+          <input type="text" id="date" value="">
+          <p></p>
+        </div>
+
+        <div id="Plant">
+          <div>
+            <strong>Select Plant</strong>
+          </div>
+          <input type="checkbox" id = "plant" value="Plant 1"> Plant 1 &nbsp; &nbsp;
+          <input type="checkbox" id = "plant" value="Plant 2"> Plant 2 &nbsp; &nbsp;
+          <input type="checkbox" id = "plant" value="Plant 3"> Plant 3 &nbsp; &nbsp;
+          <p>
+            <br>
+          </p>
+        </div>
+
+        <div id="vehicleStyle">
+          <div>
+            <strong>Select Vehicle</strong>
+          </div>
+          <input onclick="GetPicture(this.value);" type="radio" id="name" name="car" value="acadia"/> Acadia &nbsp; &nbsp;
+          <input onclick="GetPicture(this.value);" type="radio" id="name" name="car" value="traverse"/> Traverse &nbsp; &nbsp;
+          <input onclick="GetPicture(this.value);" type="radio" id="name" name="car" value="camaro"/> Camaro &nbsp; &nbsp;
+
+        </div>
+      </div>
+    </div>
+        <p>
+          <br>
+        </p>
+        <button type="button" id="myBtn" onclick="defectInput();"  align = "center" disabled="true" style="display: none; margin-bottom:100px">Enter Defect</button>
+
+
+    <hr>
+  </div>
+
+    <div id="displayACAD" style="display: none; margin-bottom:100px">
+      <img src="ACAD_LeftSide.png" align="left">
+      <img src="ACAD_RightSide.png" align="right">
+      <img src="ACAD_Roof.png" align="center"  style="margin-left:450px; margin-top:100px; ">
+    </div>
+
+    <div id="displayTRVSE" style="display: none; margin-bottom:100px">
+      <img src="TRVSE_LeftSide.png" align="left">
+      <img src="TRVSE_RightSide.png" align="right">
+      <img src="TRVSE_Roof.png" align="center"  style="margin-left:450px; margin-top:100px; ">
+    </div>
+
+    <div id="displayCAMARO" style="display: none; margin-bottom:100px">
+      <img src="CAMARO_LeftSide.png" align="left">
+      <img src="CAMARO_RightSide.png" align="right">
+      <img src="CAMARO_Roof.png" align="center"  style="margin-left:450px; margin-top:100px; ">
+    </div>
+
+  <p>
+    <br>
+    <br>
+    <br>
+
+  </p>
+  <input type="button" value="Clear Database Data" id="clear" onclick="clearData()" />
+  <footer class="container-fluid text-center">
+    <p>Team 5</p>
+  </footer>
+ 
+
+
+
+  <script>
+  
+  
+function printUser(){
+  var u = sessionStorage.getItem("user");
+  document.write(u)
+}
+
+
+function clearData(){
+  localStorage.clear();
+  var c = 0;
+  localStorage.setItem("counter", c);
+};
+
+function GetPicture(typeCar) {
+      var ACAD = document.getElementById("displayACAD");
+      var TRVSE = document.getElementById("displayTRVSE"); 
+      var CAMARO= document.getElementById("displayCAMARO");
+    
+
+      if (typeCar=="acadia") {
+        sessionStorage.setItem("model", "Acadia");
+        ACAD.style.display = "block";
+        CAMARO.style.display = "none";
+        TRVSE.style.display = "none";
+        enableDefectButton()
+      } 
+
+      else if (typeCar=="traverse") {
+        sessionStorage.setItem("model", "Traverse");
+        ACAD.style.display = "none";
+        CAMARO.style.display = "none";
+        TRVSE.style.display = "block";
+        enableDefectButton()
+    
+      } 
+
+      else if (typeCar=="camaro") {
+        sessionStorage.setItem("model", "Camaro");
+        ACAD.style.display = "none";
+        CAMARO.style.display = "block";
+        TRVSE.style.display = "none";
+        enableDefectButton()
+      } 
+
+    };
+
+  
+
+function enableDefectButton() {
+    var x = document.getElementById("myBtn");
+    x.disabled = false;
+    x.style.display = "block";
+}
+
+function defectInput() {
+  var plant = document.getElementById("plant").value;
+  sessionStorage.setItem("plant", plant);
+  var date = document.getElementById("date").value;
+  sessionStorage.setItem("date", date);
+  var x = screen.width/2 - 700/2;
+  var y = screen.height/2 - 450/2;
+  window.open("defect.html", 'sharegplus','height=440,width=300,left='+x+',top='+y);
+
+
+}
+  </script>
+
+</body>
+
+</html>
